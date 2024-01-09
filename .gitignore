@@ -1,2 +1,5 @@
 .venv
-pycharmBoniedojade
+boniedojade/.idea
+boniedojade/boniedojade/__pycache__/
+boniedojade/zachodSlonca/__pycache__/
+boniedojade/db.sqlite3
