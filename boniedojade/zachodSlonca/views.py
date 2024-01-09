@@ -11,7 +11,7 @@ def dodaj_trase(request):
 
 def dane_trasy(request):
     newName = request.POST.get("uname")
-    return render(request, "zachodSlonca:main_site", {"name" : newName})
+    return render(request, "zachodSlonca/main_site.html", {"name" : newName})
 
 def edytuj_trase(request):
     return render(request, "zachodSlonca/add_route.html", {"action" : "Zapisz"})
