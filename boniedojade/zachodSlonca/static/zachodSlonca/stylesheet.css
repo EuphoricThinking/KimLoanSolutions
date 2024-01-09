@@ -1,0 +1,10 @@
+body {
+    margin: 0px;
+    background-color: peachpuff
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 9fr);
+    width: 100vw;
+    height: 100vh;
+}
