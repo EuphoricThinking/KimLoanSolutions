@@ -1,5 +1,13 @@
 {% load static %}
 <html>
+ <head>
+        <title>Siemka tasiemka</title>
+        <link rel="stylesheet" href="{% static 'zachodSlonca/stylesheet.css' %}">
+        <!-- <script src="{% static 'compiler_site/script.js' %}"></script> -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
 
 <body>
 <header>
@@ -9,9 +17,17 @@
         <a href="{% url 'zachodSlonca:dodaj_trase' %}" id="login_link">Dodaj traskę, mordeczko</a>
     </div>
 </header>
-
-<h1>My First Heading  AH YEAH</h1>
-<p>My first paragraph.</p>
+<div class="main_content">
+    <div class="one">Kościół</div>
+    <div class="two">Szkoła</div>
+    <div class="three">Biedronka</div>
+    <div class="four">MIM</div>
+    <div class="five">Comarch</div>
+    <div class="six">Stołówka Wydziału Biologii</div>
+    <div class="seven">Kubuś</div>
+    <div class="eight">Drzwi do labów na trzecim piętrze</div>
+    <div class="nine">Palarnia</div>
+</div>
 
 
 

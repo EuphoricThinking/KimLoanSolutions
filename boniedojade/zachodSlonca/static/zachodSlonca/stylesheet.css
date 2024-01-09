@@ -1,10 +1,54 @@
 body {
     margin: 0px;
-    background-color: peachpuff
+    background-color: peachpuff;
 
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     grid-template-rows: auto minmax(0, 9fr);
     width: 100vw;
     height: 100vh;
+}
+
+div.main_content {
+    display: grid;
+    grid-row: 2/-1;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+    background-color: peachpuff;
+}
+
+div.one {
+    background-color: red;
+}
+
+div.two {
+    background-color: papayawhip;
+}
+
+div.three {
+    background-color: green;
+}
+
+div.four {
+    background-color: pink;
+}
+
+div.five {
+    background-color: yellow;
+}
+
+div.six {
+    background-color: blue;
+}
+
+div.eight {
+    background-color: red;
+}
+
+div.nine {
+    background-color: papayawhip;
+}
+
+div.seven {
+    background-color: green;
 }
