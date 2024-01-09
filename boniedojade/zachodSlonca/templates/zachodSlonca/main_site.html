@@ -21,11 +21,13 @@
     <div class="two">
         <a href="{% url 'zachodSlonca:wyswietl_mape' %}" id="map_link">{{ name }}</a>
         <a href="{% url 'zachodSlonca:edytuj_trase' %}" id="edytuj">Edytuj trasę</a>
+        <div id="hidCont" class="hid"><p>TRWA OKNO CZASOWE</p></div>
     </div>
 
 </div>
 
 
-
+<script src="{% static 'zachodSlonca/script.js' %}">
+                </script>
 </body>
 </html>

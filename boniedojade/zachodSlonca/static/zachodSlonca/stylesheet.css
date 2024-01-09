@@ -54,3 +54,7 @@ div.nine {
 div.seven {
     background-color: green;
 }
+
+.hid {
+    display: none;
+}
