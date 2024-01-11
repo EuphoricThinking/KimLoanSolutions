@@ -1,0 +1,148 @@
+body {
+    margin: 0px;
+    background-color: peachpuff;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100vw;
+    height: 100vh;
+    color: #a08060;
+}
+
+div.main_content {
+    display: grid;
+    grid-row: 2/3;
+    grid-column: 1/-1;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+    background-color: peachpuff;
+    height: 70vh;
+}
+
+div.one {
+    background-color: red;
+}
+
+div.two {
+    grid-row: 1/2;
+    grid-column: 2/3;
+    background-color: papayawhip;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+div.three {
+    background-color: green;
+}
+
+div.four {
+    background-color: pink;
+}
+
+div.five {
+    background-color: yellow;
+}
+
+div.six {
+    background-color: blue;
+}
+
+div.eight {
+    background-color: red;
+}
+
+div.nine {
+    background-color: papayawhip;
+}
+
+div.seven {
+    background-color: green;
+}
+
+.hid {
+    display: none;
+}
+
+.menu > a {
+    height: 100%;
+    display: inline-block;
+}
+
+a, a:visited {
+    text-decoration: none;
+    color: #d0b0a0;
+    padding: 10px;
+    border: 4px solid #ffc0a0;
+    background-color: #ffefe5;
+}
+
+a:hover {
+    color: #b09070;
+    background-color: #f7e5e0;
+    border: 4px solid #ffffef;
+}
+
+.main_header {
+    text-align: center;
+    grid-row: 1/2;
+    grid-column: 2/3;
+}
+
+.header_text {
+    font-size: 30px;
+}
+
+.main_site {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 3fr;
+}
+
+.links {
+    padding: 50px;
+}
+
+.menu {
+    height: 10%;
+    width: 100%;
+}
+
+input {
+    margin: 8px 0;
+}
+
+input[type=checkbox] {
+    margin: 0;
+}
+
+input[type=text] {
+    background-color: #ffefe5;
+    border: 0;
+    width: 100%;
+}
+
+input[type=time] {
+    background-color: #ffefe5;
+    border: 0;
+    float: right;
+    margin-left: 5px;
+}
+
+select {
+    background-color: #ffefe5;
+    border: 0;
+    width: 100%;
+}
+
+.submit_button {
+    background-color: #ffefe5;
+    border: 4px solid #ffc0a0;
+    float: right;
+    padding: 10px 10px;
+}
+
+.submit_button:hover {
+    color: #b09070;
+    background-color: #f7e5e0;
+    border: 4px solid #ffffef;
+}
