@@ -1,19 +1,24 @@
 {% load static %}
 <html>
- <head>
-        <title>Siemka tasiemka</title>
-        <link rel="stylesheet" href="{% static 'zachodSlonca/stylesheet.css' %}">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>
-
-
+  <head>
+    <title>Siemka tasiemka</title>
+    <link rel="stylesheet" href="{% static 'zachodSlonca/stylesheet.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ </head>
 <body>
+  <header>
+    <div class="menu">
+      <a href="{% url 'zachodSlonca:main_site' %}">Strona główna</a>
+    </div>
+  </header>
 
-<h3>{{ welcome }}</h3>
+  <h3>{{ welcome }}</h3>
 
 
-<script src="{% static 'zachodSlonca/script.js' %}">
-                </script>
-</body>
+  <h1>Moja jedyna trasa</h1>
+  <img id="mapa" src="{% static 'media/autobus.png' %}"/>
+
+  <script src="{% static 'zachodSlonca/script.js' %}"></script>
+  </body>
 </html>

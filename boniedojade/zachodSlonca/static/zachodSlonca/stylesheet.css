@@ -58,3 +58,12 @@ div.seven {
 .hid {
     display: none;
 }
+
+#mapa {
+    width: 400px;
+    max-height: 600px;
+}
+
+#opóźnienie {
+    color: red;
+}

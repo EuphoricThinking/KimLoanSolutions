@@ -1,3 +1,5 @@
+niezbędne moduły: `django`
+
 uruchamianie serwera: `python manage.py runserver` z terminala w katalogu z manage.py
 
 wygląd strony: zachodSlonca/templates/zachodSlonca (pliki powinny być w ,,powtórzonym" zachodSlonca - przynajmniej tak działa - nie przemieszczać).
