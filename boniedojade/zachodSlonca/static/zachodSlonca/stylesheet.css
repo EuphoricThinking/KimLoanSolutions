@@ -64,6 +64,12 @@ div.seven {
     max-height: 600px;
 }
 
+#info-o-połączeniu {
+    background-color: white;
+    width: 400px;
+    border-radius: 10px;
+}
+
 #opóźnienie {
     color: red;
 }
