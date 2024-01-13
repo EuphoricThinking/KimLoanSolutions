@@ -30,6 +30,7 @@ const godzinaPrzyjazdu = document.getElementById('godzina-odjazdu');
 const godzinaDojazdu = document.getElementById('godzina-dojazdu');
 const infoOPołączeniu = document.getElementById('info-o-połączeniu');
 const szczegółyToggle = document.getElementById('szczegóły-toggle');
+const środki = document.getElementById('środki');
 
 let godzinaPrzyjazduGłówna = new Date();
 godzinaPrzyjazduGłówna.setHours(13, 4);
@@ -43,14 +44,14 @@ const czasDojazduAlternatywnej = 47;
 const trasy = {
     główna: {
         czas: czasDojazduGłównej,
-        środki: [['R7', 'pociąg']],
+        środki: 'pociąg R7',
         godzinaPrzyjazdu: godzinaPrzyjazduGłówna,
         godzinaDojazdu: godzinaPrzyjazduGłówna + czasDojazduGłównej,
-        opóźnienie: 40
+        opóźnienie: 40,
     },
     alternatywna: {
         czas: czasDojazduAlternatywnej,
-        środki: [['521', 'autobus'], ['502', 'autobus'], ['158', 'autobus']],
+        środki: 'autobus 521 > autobus 502 > autobus 159',
         godzinaPrzyjazdu: godzinaPrzyjazduAlternatywna,
         godzinaDojazdu: godzinaPrzyjazduAlternatywna + czasDojazduAlternatywnej,
         opóźnienie: 2
@@ -65,6 +66,7 @@ const wyświetlTrasę = (trasa) => {
     const rzeczywistaGodzinaDojazdu = moveDateByMinutes(trasa.godzinaPrzyjazdu, trasa.czas);
     godzinaDojazdu.innerHTML = `${rzeczywistaGodzinaDojazdu.getHours()}:${rzeczywistaGodzinaDojazdu.getMinutes() < 10 ? '0' : ''}${rzeczywistaGodzinaDojazdu.getMinutes()}`;
     opóźnienie.innerHTML = `${trasa.opóźnienie}min`;
+    środki.innerHTML = trasa.środki;
 }
 
 const togglujSzczegóły = () => {
