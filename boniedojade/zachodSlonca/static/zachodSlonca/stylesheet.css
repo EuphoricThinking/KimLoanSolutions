@@ -94,3 +94,8 @@ th {
     align-items: center;
     justify-content: space-between;
 }
+
+#chamska-mapa-bo-nie-lubię-grida {
+    position: absolute;
+    top: 50px;
+}

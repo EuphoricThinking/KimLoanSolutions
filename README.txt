@@ -22,3 +22,4 @@ zachodSlonca/urls.py
 - `Shift` + `Q` — trasa główna
 - `Shift` + `W` — trasa alternatywna
 - `Shift` + `E` — pusta mapa
+- `Shift` + `R` — szczegóły

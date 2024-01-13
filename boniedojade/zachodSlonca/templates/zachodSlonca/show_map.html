@@ -14,40 +14,39 @@
   </header>
 
   <h3>{{ welcome }}</h3>
-
-
-  <div id="nagłówek">
-    <h1>Moja jedyna trasa</h1>
-    <button id="szczegóły-toggle">Wyświetl szczegóły</button>
-  </div>
-  <div id="wrapper-mapy">
-    <img id="mapa" src="{% static 'media/autobus.png' %}"/>
-    <div id="info-o-połączeniu">
-      <table>
-        <tr>
-          <td><strong>Linie</strong></td>
-          <td><strong id="środki">Linie</strong></td>
-        </tr>
-        <tr>
-          <td><strong>Czas przejazdu</strong></td>
-          <td id="czas-przejazdu"></td>
-        </tr>
-        <tr>
-          <td><strong>Godzina odjazdu</strong></td>
-          <td id="godzina-odjazdu"></td>
-        </tr>
-        <tr>
-          <td><strong>Planowa godzina dojazdu</strong></td>
-          <td id="godzina-dojazdu"></td>
-        </tr>
-        <tr>
-          <td><strong>Opóźnienie</strong></td>
-          <td id="opóźnienie"></td>
-        </tr>
-      </table>
+  <div id="chamska-mapa-bo-nie-lubię-grida">
+    <div id="nagłówek">
+      <h4>Mapa z przystankami</h4>
+      <button id="szczegóły-toggle">Wyświetl szczegóły</button>
     </div>
-  </div>
-  
+    <div id="wrapper-mapy">
+      <img id="mapa" src="{% static 'media/autobus.png' %}"/>
+      <div id="info-o-połączeniu">
+        <table>
+          <tr>
+            <td><strong>Linie</strong></td>
+            <td><strong id="środki">Linie</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Czas przejazdu</strong></td>
+            <td id="czas-przejazdu"></td>
+          </tr>
+          <tr>
+            <td><strong>Godzina odjazdu</strong></td>
+            <td id="godzina-odjazdu"></td>
+          </tr>
+          <tr>
+            <td><strong>Planowa godzina dojazdu</strong></td>
+            <td id="godzina-dojazdu"></td>
+          </tr>
+          <tr>
+            <td><strong>Opóźnienie</strong></td>
+            <td id="opóźnienie"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>  
 
   <script src="{% static 'zachodSlonca/script.js' %}"></script>
   </body>

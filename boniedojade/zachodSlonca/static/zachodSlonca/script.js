@@ -102,6 +102,11 @@ document.addEventListener('keydown', (e) => {
             case 'KeyE':
                 wyswietlPustaMape();
                 break;
+            case 'KeyA': {
+                if (szczegółyToggle.style.display !== 'none') {
+                    togglujSzczegóły();
+                }
+            }
         }
     }
 });
@@ -110,4 +115,4 @@ wyświetlGłównąTrasę();
 
 szczegółyToggle.addEventListener('click', () => {
     togglujSzczegóły();
-})
+});
