@@ -16,7 +16,7 @@ window.onload = function() {
 function displayAlert() {
             const href = window.location.href;
             const page_name = href.split('/').slice(-2)[0];
-            if (page_name === "edytuj_trase") {
+            if (page_name === "dodaj_trase") {
                         alert("Poprzednia trasa zostanie usunięta.")
             }
 }
