@@ -1,4 +1,4 @@
-# niezbędne moduły
+# niezbędne moduły pythonowskie
 `django`
 
 # uruchamianie serwera
@@ -19,7 +19,10 @@ zachodSlonca/urls.py
 3. zachodSlonca/views.py - dodać funkcję moj_link(request //ewentualnie argumenty przekazane w templacie, np. wartości zaznaczone w checkboksach powinny zostać odebrane jako lista, jeśli dobrze pamiętam//)
 
 # jak zmieniać mapę
-- `Shift` + `Q` — trasa główna
-- `Shift` + `W` — trasa alternatywna
-- `Shift` + `E` — pusta mapa
-- `Shift` + `R` — szczegóły
+- `Shift` + `G` — trasa główna
+- `Shift` + `A` — trasa alternatywna
+- `Shift` + `P` — pusta mapa
+- `Shift` + `S` — szczegóły
+
+# wysuwanie bloku
+przez przycisk albo prawy przycisk myszy z controlem

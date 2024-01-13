@@ -93,16 +93,16 @@ const wyswietlPustaMape = () => {
 document.addEventListener('keydown', (e) => {
     if (e.shiftKey) {
         switch (e.code) {
-            case 'KeyQ':
+            case 'KeyG':
                 wyświetlGłównąTrasę();
                 break;
-            case 'KeyW':
+            case 'KeyA':
                 wyswietlAlternatywnaTrase();
                 break;
-            case 'KeyE':
+            case 'KeyP':
                 wyswietlPustaMape();
                 break;
-            case 'KeyA': {
+            case 'KeyS': {
                 if (szczegółyToggle.style.display !== 'none') {
                     togglujSzczegóły();
                 }
@@ -116,3 +116,12 @@ wyświetlGłównąTrasę();
 szczegółyToggle.addEventListener('click', () => {
     togglujSzczegóły();
 });
+
+mapa.addEventListener('contextmenu', function(event) {
+    // Check if the Ctrl key is pressed
+    if (event.ctrlKey && szczegółyToggle.style.display !== 'none') {
+        event.preventDefault();
+        infoOPołączeniu.style.display = 'block';
+        szczegółyToggle.innerHTML = 'Ukryj szczegóły';
+    }
+  });
