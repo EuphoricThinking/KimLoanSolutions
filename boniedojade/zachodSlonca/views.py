@@ -23,4 +23,4 @@ def edytuj_trase(request):
 
 def wyswietl_mape(request):
     return render(request, "zachodSlonca/show_map.html",
-                  {"welcome": "SIALALALALAAAAAAAAAAAA"})
+                  {"welcome": "MOJA JEDYNA TRASA"})

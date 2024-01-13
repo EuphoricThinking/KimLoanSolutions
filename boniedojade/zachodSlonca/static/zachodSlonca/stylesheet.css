@@ -60,10 +60,42 @@ div.seven {
 }
 
 #mapa {
+    position: absolute;
     width: 400px;
     max-height: 600px;
 }
 
+#info-o-połączeniu {
+    position: absolute;
+    top: 0;
+    background-color: white;
+    width: 400px;
+    border-radius: 10px;
+    display: none;
+}
+
 #opóźnienie {
     color: red;
+}
+
+#wrapper-mapy {
+    position: relative;
+    z-index: 2;
+}
+
+th {
+    text-align: center;
+}
+
+#nagłówek {
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#chamska-mapa-bo-nie-lubię-grida {
+    position: absolute;
+    top: 50px;
 }
