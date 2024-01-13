@@ -61,15 +61,14 @@ div.seven {
 
 #mapa {
     position: absolute;
-    width: 400px;
-    max-height: 600px;
+    height: calc(100vh  - 150px);
 }
 
 #info-o-połączeniu {
     position: absolute;
     top: 0;
     background-color: white;
-    width: 400px;
+    width: 100%;
     border-radius: 10px;
     display: none;
 }
@@ -81,6 +80,7 @@ div.seven {
 #wrapper-mapy {
     position: relative;
     z-index: 2;
+    height: calc(100vh  - 150px);
 }
 
 th {
@@ -98,4 +98,6 @@ th {
 #chamska-mapa-bo-nie-lubię-grida {
     position: absolute;
     top: 50px;
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
 }
