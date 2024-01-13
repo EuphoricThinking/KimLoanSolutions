@@ -5,21 +5,55 @@ const moveDateByMinutes = (date, minutes) => {
     return newDate;
 };
 
-function delayedAction() {
-            var hiddenContent = document.getElementById("hidCont");
-            if (hiddenContent.style.display) hiddenContent.style.display = "block";
-        }
+//function delayedAction() {
+//            var hiddenContent = document.getElementById("hidCont");
+//            if (hiddenContent.style.display) hiddenContent.style.display = "block";
+//        }
+//
+//function hideElem() {
+//            var hiddenContent = document.getElementById("hidCont");
+//            if (hiddenContent.style.display) hiddenContent.style.display = "none";
+//        }
+//
+//
+//        window.onload = function() {
+//            setTimeout(delayedAction, 3000);
+//            setTimeout(hideElem, 5000);
+//        };
 
-function hideElem() {
-            var hiddenContent = document.getElementById("hidCont");
-            if (hiddenContent.style.display) hiddenContent.style.display = "none";
-        }
+function checkAndShow() {
+    var currentTime = new Date();
+    console.log(currentTime)
+    var targetTime = new Date(currentTime);
+    targetTime.setHours(22, 01, 0, 0); // Set the target time to 12:34:00
 
+    var endTime = new Date(currentTime)
+    endTime.setHours(22,03,0,0)
 
-        window.onload = function() {
-            setTimeout(delayedAction, 3000);
-            setTimeout(hideElem, 5000);
-        };
+    var getCont = document.getElementById('hidCont')
+    if (getCont == null) {
+        console.log('another page');
+        clearInterval(intervalId);
+        return;
+    }
+
+    if (currentTime >= targetTime && currentTime <= endTime) {
+        // Your code to change display: none to display: block
+        document.getElementById('hidCont').style.display = 'block';
+
+        // Stop checking once the condition is met
+        // clearInterval(intervalId);
+    }
+
+    if (currentTime >= targetTime && currentTime > endTime) {
+        document.getElementById('hidCont').style.display = 'hidden';
+        clearInterval(intervalId);
+    }
+}
+
+// Run the checkAndShow function every second (1000 milliseconds)
+var intervalId = setInterval(checkAndShow, 1000);
+
 
 const loc = window.location.pathname;
 const dir = loc.substring(0, loc.lastIndexOf('/'));
