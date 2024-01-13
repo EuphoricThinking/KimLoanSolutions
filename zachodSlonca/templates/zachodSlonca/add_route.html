@@ -16,9 +16,7 @@
     </header>
 
     <div class="main_content">
-        <h3>Poprzednia trasa zostanie usunięta</h3> <!-- alert? -->
-
-        <form action="{% url 'zachodSlonca:dane_trasy' %}" method="post" name="login_form">
+        <form action="{% url 'zachodSlonca:dane_trasy' %}" method="post" name="login_form" class="two">
         {% csrf_token %}
 
             <label for="uname">Nazwa trasy:</label>
