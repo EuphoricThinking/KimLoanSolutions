@@ -1,11 +1,18 @@
+const moveDateByMinutes = (date, minutes) => {
+    const newDate = new Date(date);
+    newDate.setMinutes(date.getMinutes() + minutes);
+  
+    return newDate;
+};
+
 function delayedAction() {
             var hiddenContent = document.getElementById("hidCont");
-            hiddenContent.style.display = "block";
+            if (hiddenContent.style.display) hiddenContent.style.display = "block";
         }
 
 function hideElem() {
             var hiddenContent = document.getElementById("hidCont");
-            hiddenContent.style.display = "none";
+            if (hiddenContent.style.display) hiddenContent.style.display = "none";
         }
 
 
@@ -19,53 +26,73 @@ const dir = loc.substring(0, loc.lastIndexOf('/'));
 const mapa = document.getElementById('mapa')
 const czasPrzejazdu = document.getElementById('czas-przejazdu');
 const opóźnienie = document.getElementById('opóźnienie');
+const godzinaPrzyjazdu = document.getElementById('godzina-odjazdu');
+const godzinaDojazdu = document.getElementById('godzina-dojazdu');
+const infoOPołączeniu = document.getElementById('info-o-połączeniu');
+const szczegółyToggle = document.getElementById('szczegóły-toggle');
 
-mapa.src = "/static/media/pusta.png";
+let godzinaPrzyjazduGłówna = new Date();
+godzinaPrzyjazduGłówna.setHours(13, 4);
 
-const godzinaPrzyjazduGłówna = new Date();
-godzinaPrzyjazduGłówna.setHours(13);
-godzinaPrzyjazduGłówna.setMinutes(0);
+let godzinaPrzyjazduAlternatywna = new Date();
+godzinaPrzyjazduAlternatywna.setHours(13, 12);
 
-const godzinaPrzyjazduAlternatywna = new Date();
-godzinaPrzyjazduGłówna.setHours(13);
-godzinaPrzyjazduGłówna.setMinutes(12);
+const czasDojazduGłównej = 36;
+const czasDojazduAlternatywnej = 47;
 
 const trasy = {
     główna: {
-        czas: 36 * 60 * 1000,
+        czas: czasDojazduGłównej,
         środki: [['R7', 'pociąg']],
         godzinaPrzyjazdu: godzinaPrzyjazduGłówna,
-        godzinaDojazdu: godzinaPrzyjazduGłówna + 36 * 60 * 1000,
-        opóźnienie: [40 * 60 * 1000]
+        godzinaDojazdu: godzinaPrzyjazduGłówna + czasDojazduGłównej,
+        opóźnienie: 40
     },
     alternatywna: {
-        czas: 47 * 60 * 1000,
+        czas: czasDojazduAlternatywnej,
         środki: [['521', 'autobus'], ['502', 'autobus'], ['158', 'autobus']],
         godzinaPrzyjazdu: godzinaPrzyjazduAlternatywna,
-        godzinaDojazdu: godzinaPrzyjazduAlternatywna + 36 * 60 * 1000,
-        opóźnienie: [0, 0, 2 * 60 * 1000]
+        godzinaDojazdu: godzinaPrzyjazduAlternatywna + czasDojazduAlternatywnej,
+        opóźnienie: 2
     }
 };
+console.log(godzinaPrzyjazdu, godzinaDojazdu);
 
-const wyswietlGlownaTrase = () => {
+const wyświetlTrasę = (trasa) => {
+    szczegółyToggle.style.display = 'block';
+    czasPrzejazdu.innerHTML = `${trasa.czas}min`;
+    godzinaPrzyjazdu.innerHTML = `${trasa.godzinaPrzyjazdu.getHours()}:${trasa.godzinaPrzyjazdu.getMinutes() < 10 ? '0' : ''}${trasa.godzinaPrzyjazdu.getMinutes()}`;
+    const rzeczywistaGodzinaDojazdu = moveDateByMinutes(trasa.godzinaPrzyjazdu, trasa.czas);
+    godzinaDojazdu.innerHTML = `${rzeczywistaGodzinaDojazdu.getHours()}:${rzeczywistaGodzinaDojazdu.getMinutes() < 10 ? '0' : ''}${rzeczywistaGodzinaDojazdu.getMinutes()}`;
+    opóźnienie.innerHTML = `${trasa.opóźnienie}min`;
+}
+
+const togglujSzczegóły = () => {
+    const włączone = infoOPołączeniu.style.display === 'block';
+    infoOPołączeniu.style.display = włączone ? 'none' : 'block';
+    szczegółyToggle.innerHTML = włączone ? 'Rozwiń szczegóły' : 'Ukryj szczegóły';
+}
+
+const wyświetlGłównąTrasę = () => {
     mapa.src = `/static/media/pociag.png`;
-    czasPrzejazdu.innerHTML = `${trasy.główna.czas / 60 / 1000}min`;
+    wyświetlTrasę(trasy.główna);
 };
 const wyswietlAlternatywnaTrase = () => {
     mapa.src = `/static/media/autobus.png`;
-    czasPrzejazdu.innerHTML = `${trasy.alternatywna.czas / 60 / 1000}min`;
+    wyświetlTrasę(trasy.alternatywna);
 };
 const wyswietlPustaMape = () => {
     mapa.src = `/static/media/pusta.png`;
-    czasPrzejazdu.innerHTML = "";
+    infoOPołączeniu.style.display = 'none';
+    szczegółyToggle.innerHTML = 'Rozwiń szczegóły';
+    szczegółyToggle.style.display = 'none';
 };
 
 document.addEventListener('keydown', (e) => {
-    console.log(e);
     if (e.shiftKey) {
         switch (e.code) {
             case 'KeyQ':
-                wyswietlGlownaTrase();
+                wyświetlGłównąTrasę();
                 break;
             case 'KeyW':
                 wyswietlAlternatywnaTrase();
@@ -74,6 +101,11 @@ document.addEventListener('keydown', (e) => {
                 wyswietlPustaMape();
                 break;
         }
-        console.log(e.code)
     }
 });
+
+wyświetlGłównąTrasę();
+
+szczegółyToggle.addEventListener('click', () => {
+    togglujSzczegóły();
+})
