@@ -23,6 +23,7 @@ zachodSlonca/urls.py
 - `Shift` + `A` — trasa alternatywna
 - `Shift` + `P` — pusta mapa
 - `Shift` + `S` — szczegóły
+- `Shift` + `U` - uwaga, opóźnienie: alert
 
 # wysuwanie bloku
 przez przycisk albo prawy przycisk myszy z controlem
