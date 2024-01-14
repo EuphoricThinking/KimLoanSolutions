@@ -9,20 +9,23 @@
 
 
 <body>
-<header>
-    <p>Headerek</p>
-    <div class="top_panel">
+<div class="main_site">
+    <header class="main_header">
+        <p class="header_text">Headerek</p>
+        <div class="top_panel">
 
-        <a href="{% url 'zachodSlonca:dodaj_trase' %}" id="login_link">Dodaj traskę, mordeczko</a>
+            <a href="{% url 'zachodSlonca:dodaj_trase' %}" id="login_link">Dodaj traskę, mordeczko</a>
+        </div>
+    </header>
+    <div class="main_content">
+        <div class="two">
+            <div class="links">
+                <a href="{% url 'zachodSlonca:wyswietl_mape' %}" id="map_link">{{ name }}</a>
+                <a href="{% url 'zachodSlonca:edytuj_trase' %}" id="edytuj">Edytuj trasę</a>
+            </div>
+            <div id="hidCont" class="hid"><p>TRWA OKNO CZASOWE</p></div>
+        </div>
     </div>
-</header>
-<div class="main_content">
-    <div class="two">
-        <a href="{% url 'zachodSlonca:wyswietl_mape' %}" id="map_link">{{ name }}</a>
-        <a href="{% url 'zachodSlonca:edytuj_trase' %}" id="edytuj">Edytuj trasę</a>
-        <div id="hidCont" class="hid"><p>TRWA OKNO CZASOWE</p></div>
-    </div>
-
 </div>
 
 

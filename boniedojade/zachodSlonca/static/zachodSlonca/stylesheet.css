@@ -1,29 +1,91 @@
+#mapa {
+    /* position: absolute; */
+    width: 400px;
+    max-height: 600px;
+}
+
+#info-o-połączeniu {
+    position: absolute;
+    top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    background-color: white;
+    width: 400px;
+    border-radius: 10px;
+    display: none;
+}
+
+#opóźnienie {
+    color: red;
+}
+
+#wrapper-mapy {
+    position: relative;
+    z-index: 2;
+}
+
+th {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+#nagłówek {
+    margin: auto;
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#chamska-mapa-bo-nie-lubię-grida {
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    position: absolute;
+    top: 50px;
+    min-height: 800px;
+}
+
 body {
     margin: 0px;
     background-color: peachpuff;
-
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: auto minmax(0, 9fr);
+    font-family: Arial, Helvetica, sans-serif;
     width: 100vw;
     height: 100vh;
+    color: #a08060;
 }
 
 div.main_content {
     display: grid;
-    grid-row: 2/-1;
+    grid-row: 2/3;
+    grid-column: 1/-1;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-template-rows: repeat(3, minmax(0, 1fr));
     background-color: peachpuff;
+    height: 70vh;
 }
 
 div.one {
     background-color: red;
 }
 
-div.two {
+.two {
     grid-row: 1/2;
-    grid-column: 1/2;
+    grid-column: 2/3;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+div.two {
     background-color: papayawhip;
 }
 
@@ -59,43 +121,88 @@ div.seven {
     display: none;
 }
 
-#mapa {
-    position: absolute;
-    width: 400px;
-    max-height: 600px;
+.menu > a {
+    height: 100%;
+    display: inline-block;
 }
 
-#info-o-połączeniu {
-    position: absolute;
-    top: 0;
-    background-color: white;
-    width: 400px;
-    border-radius: 10px;
-    display: none;
+a, a:visited {
+    text-decoration: none;
+    color: #d0b0a0;
+    padding: 10px;
+    border: 4px solid #ffc0a0;
+    background-color: #ffefe5;
 }
 
-#opóźnienie {
-    color: red;
+a:hover {
+    color: #b09070;
+    background-color: #f7e5e0;
+    border: 4px solid #ffffef;
 }
 
-#wrapper-mapy {
-    position: relative;
-    z-index: 2;
-}
-
-th {
+.main_header {
     text-align: center;
+    grid-row: 1/2;
+    grid-column: 2/3;
 }
 
-#nagłówek {
-    width: 400px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+.header_text {
+    font-size: 30px;
 }
 
-#chamska-mapa-bo-nie-lubię-grida {
-    position: absolute;
-    top: 50px;
+.main_site {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 3fr;
+}
+
+.links {
+    padding: 50px;
+}
+
+.menu {
+    height: 10%;
+    width: 100%;
+}
+
+input {
+    margin: 8px 0;
+}
+
+input[type=checkbox] {
+    margin: 0;
+}
+
+input[type=text] {
+    background-color: #ffefe5;
+    border: 0;
+    width: 100%;
+}
+
+input[type=time] {
+    background-color: #ffefe5;
+    border: 0;
+    float: right;
+    margin-left: 5px;
+}
+
+select {
+    background-color: #ffefe5;
+    border: 0;
+    width: 100%;
+}
+
+.submit_button, #szczegóły-toggle {
+    background-color: #ffefe5;
+    color: #d0b0a0;
+    border: 4px solid #ffc0a0;
+    float: right;
+    padding: 10px 10px;
+}
+
+.submit_button:hover, #szczegóły-toggle:hover {
+    color: #b09070;
+    background-color: #f7e5e0;
+    border: 4px solid #ffffef;
 }

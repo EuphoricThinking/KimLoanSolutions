@@ -1,3 +1,5 @@
+window.addEventListener('load', init);
+
 const moveDateByMinutes = (date, minutes) => {
     const newDate = new Date(date);
     newDate.setMinutes(date.getMinutes() + minutes);
@@ -159,3 +161,31 @@ mapa.addEventListener('contextmenu', function(event) {
         szczegółyToggle.innerHTML = 'Ukryj szczegóły';
     }
   });
+
+function displayAlert() {
+            const href = window.location.href;
+            const page_name = href.split('/').slice(-2)[0];
+            if (page_name === "dodaj_trase") {
+                        alert("Poprzednia trasa zostanie usunięta.")
+            }
+}
+
+function hideTimeWindow() {
+            const dropdown = document.getElementById("okno_trasa");
+            const selectedVal = dropdown.options[dropdown.selectedIndex].value;
+            const toggle = document.getElementsByClassName("jesli_okno_czasowe")[0];
+            if (selectedVal !== "okno") {
+                        toggle.style.display = "none";
+            }
+            else {
+                        toggle.style.display = "block";
+            }
+}
+
+function init() {
+            displayAlert();
+            hideTimeWindow();
+            const dropdown = document.getElementById("okno_trasa");
+            dropdown.addEventListener("change", hideTimeWindow);
+}
+
