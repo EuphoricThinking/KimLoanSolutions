@@ -121,6 +121,13 @@ document.addEventListener('keydown', (e) => {
                 if (szczegółyToggle.style.display !== 'none') {
                     togglujSzczegóły();
                 }
+
+                break;
+            }
+            case 'KeyU': {
+                alert('Opóźnienie na trasie: 40 minut\nWyświetl alternatywną trasę')
+                wyswietlAlternatywnaTrase();
+                break;
             }
         }
     }
